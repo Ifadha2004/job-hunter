@@ -1,16 +1,19 @@
-# CV and Cover Letter Builder
+# Job Hunter
 
-A free, single-file CV and cover letter builder. ATS-friendly, no tracking, no server.
+A free, private job-search toolkit that runs entirely in your browser. No server, no sign-up, no build step.
 
-## Use
-1. Open the site and replace the sample content with your own (or click "New blank CV").
-2. Click "Save as new version" for each job you apply to.
-3. Paste the job description and check the "Keyword match" tab.
-4. Click "Print / Save as PDF" (margins: Default, headers and footers: off).
-
-## Your data and privacy
-Everything is saved in your own browser (localStorage). Nothing is uploaded and nobody else can see it.
-Use Backup / Restore to move your data between browsers or devices.
+- **CV builder**: ATS-friendly CV and cover letter, with saved versions per job. Print or save as PDF with clickable links.
+- **Job fit analysis**: paste a job description and get a score, must-have vs nice-to-have requirements, how strongly your CV proves each one (work experience, project, skills list only, related tech), achievement-bullet quality and ATS checks. Optional AI review with your own Anthropic API key.
+- **Applications tracker**: replaces your Excel sheet. Click **Mark as applied** in the builder and the job details are saved. Statuses, follow-up dates, search, filters, CSV import and export.
 
 ## Deploy
-Push this folder to GitHub, import the repo in Vercel, and deploy. No build settings are needed.
+Upload everything (`index.html`, `css/`, `js/`) to a GitHub repo and import it in Vercel. Framework preset: **Other**. No build command.
+
+## Privacy
+All data is stored in each visitor's own browser (localStorage). Nothing is sent anywhere unless a visitor runs the optional AI review, which goes straight from their browser to Anthropic using their own key. Use **Data and settings > Back up everything** regularly, since clearing browser data erases it.
+
+## Tech stack
+Plain HTML, CSS and JavaScript on purpose: instant load, free hosting, nothing to break. Move to a framework plus a database only if you add accounts, cross-device sync or a shared AI key.
+
+## Files
+`js/analyzer.js` fit engine, `js/tracker-data.js` tracker logic and CSV, `js/core.js` storage, `js/builder.js` CV editor and preview, `js/fit.js` fit report and AI, `js/tracker.js` Applications view, `js/app.js` wiring.
